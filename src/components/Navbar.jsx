@@ -25,7 +25,7 @@ const Navbar = () => {
   useGsapDownStager(logoArr, 1);
 
   return (
-    <nav className="navbar ">
+    <nav className="navbar wrapper">
       <ul className="links-one">
         <li ref={li11}>
           <Link to="/">Home</Link>

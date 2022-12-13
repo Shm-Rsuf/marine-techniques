@@ -92,3 +92,47 @@ export const useGsapDownStager = (arr, delay = 0) => {
     );
   }, []);
 };
+
+export const useGsapPhotoDropping = (arr) => {
+  useEffect(() => {
+    const el = arr.map((item) => item.current);
+
+    gsap.fromTo(
+      el,
+      {
+        y: "-100vh",
+        scale: 0,
+      },
+      {
+        y: 0,
+        scale: 1,
+        duration: 2,
+        delay: 2.75,
+        stagger: 0.2,
+        ease: Expo.easeInOut,
+      }
+    );
+  }, []);
+};
+
+export const useGsapPhotoLevitate = (arr, trig) => {
+  useEffect(() => {
+    const el = arr.map((item) => item.current);
+
+    gsap.fromTo(
+      el,
+      {
+        y: 0,
+      },
+      {
+        y: "-35%",
+        ease: Expo.easeInOut,
+        scrollTrigger: {
+          trigger: trig.current,
+          scrub: 1,
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+  }, []);
+};
