@@ -1,0 +1,108 @@
+/*******Common Css *******/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --color-primary: #d53f41;
+  --color-dark: #626262;
+  --color-darker: #464646;
+  --color-light: #dbd8d6;
+  --color-lighter: #f5f0ec;
+  --color-hover: #4400ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  background-color: var(--color-lighter);
+  color: var(--color-darker);
+}
+
+.wrapper {
+  margin: 0 5vw;
+}
+
+section {
+  padding: 10vw 0;
+}
+
+.section-title {
+  font-family: "Syncopate", sans-serif;
+  font-size: 1.5rem;
+  text-transform: lowercase;
+  padding-bottom: 5vw;
+  color: var(--color-primary);
+}
+
+.min-h-100vh {
+  min-width: 100vh;
+}
+
+/******* Navbar Design Starts *******/
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 1.5rem 0;
+  font-family: "Syncopate", sans-serif;
+  font-size: 1.5rem;
+  text-transform: lowercase;
+}
+.links-one,
+.links-two {
+  font-weight: 700;
+}
+
+.links-one a,
+.links-two a {
+  color: var(--color-darker);
+  position: relative;
+}
+
+.links-one a::after,
+.links-two a::after {
+  content: "";
+  width: 0%;
+  height: 0.2rem;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  /* transform: translate(-50%, -50%); */
+  transform: translateX(-100px);
+  visibility: hidden;
+  background-color: var(--color-hover);
+  transition: transform 0.3s cubic-bezier(0.65, -1.13, 0.3, 2.18);
+}
+
+.links-one a:hover::after,
+.links-two a:hover::after {
+  width: 100%;
+  transform: translateX(0px);
+  visibility: visible;
+}
+
+.logo img {
+  width: 80%;
+}
