@@ -321,8 +321,9 @@ export const useGsapServiceLeftShutterOpen = (item, trig) => {
       },
       {
         height: 0,
-        duration: 1.25,
+        duration: 2.5,
         ease: Expo.easeInOut,
+        delay: 1,
         scrollTrigger: {
           trigger: trig.current,
           start: "top center",
@@ -345,7 +346,8 @@ export const useGsapServiceRightShutterOpen = (item, trig) => {
       },
       {
         width: 0,
-        duration: 1.25,
+        duration: 2.5,
+        delay: 1,
         ease: Expo.easeInOut,
         scrollTrigger: {
           trigger: trig.current,
@@ -353,6 +355,67 @@ export const useGsapServiceRightShutterOpen = (item, trig) => {
           end: "bottom center",
           toggleActions: "play reverse play reverse",
         },
+      }
+    );
+  }, []);
+};
+
+export const useGsapFooterHeading = (item, trig) => {
+  useEffect(() => {
+    const el = item.current;
+
+    gsap.fromTo(
+      el,
+      {
+        y: "-100%",
+      },
+      {
+        y: 0,
+        duration: 1,
+        ease: Expo.easeInOut,
+        scrollTrigger: {
+          trigger: trig.current,
+          toggleActions: "play",
+        },
+      }
+    );
+  }, []);
+};
+
+export const useGsapNotFoundHeading = (item, vw = "-100vw") => {
+  useEffect(() => {
+    const el = item.current;
+
+    gsap.fromTo(
+      el,
+      {
+        x: vw,
+      },
+      {
+        x: 0,
+        duration: 1.5,
+        ease: Expo.easeInOut,
+      }
+    );
+  }, []);
+};
+
+export const useGsapNotFoundImage = (item) => {
+  useEffect(() => {
+    const el = item.current;
+
+    gsap.fromTo(
+      el,
+      {
+        scale: 0,
+        borderRadius: "50%",
+      },
+      {
+        scale: 1,
+        borderRadius: 0,
+        duration: 4,
+        delay: 1,
+        ease: "elastic",
       }
     );
   }, []);
