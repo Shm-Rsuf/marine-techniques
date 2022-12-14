@@ -2,24 +2,19 @@ import { useRef } from "react";
 import {
   useGsapAboutLeftShutterOpen,
   useGsapAboutRightShutterOpen,
-  useGsapAboutUs,
 } from "../hooks/gsap";
 
 const About = () => {
   const aboutRef = useRef(null);
-  const aboutUsRef = useRef(null);
   const aboutleftShutterRef = useRef(null);
   const aboutRightShutterRef = useRef(null);
 
   useGsapAboutLeftShutterOpen(aboutleftShutterRef, aboutRef);
   useGsapAboutRightShutterOpen(aboutRightShutterRef, aboutRef);
-  useGsapAboutUs(aboutUsRef, aboutRef);
 
   return (
     <section ref={aboutRef} className="about wrapper">
-      <h2 className="section-title" ref={aboutUsRef}>
-        About Us
-      </h2>
+      <h2 className="section-title heading-text">About Us</h2>
       <div className="about-us">
         <div className="about-left">
           <span className="about-text">About our company</span>

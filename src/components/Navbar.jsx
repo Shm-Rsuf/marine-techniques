@@ -47,10 +47,10 @@ const Navbar = () => {
       </div>
       <ul className="links-two">
         <li ref={li21}>
-          <Link to="/service">Service</Link>
+          <Link to="/feature">Feature</Link>
         </li>
         <li ref={li22}>
-          <Link to="/contact">Contact</Link>
+          <Link to="/service">Service</Link>
         </li>
         <li ref={li23}>
           <Link to="/help">Help</Link>
