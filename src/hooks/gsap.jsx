@@ -136,3 +136,72 @@ export const useGsapPhotoLevitate = (arr, trig) => {
     );
   }, []);
 };
+
+export const useGsapAboutUs = (item, trig) => {
+  useEffect(() => {
+    const el = item.current;
+
+    gsap.fromTo(
+      el,
+      {
+        y: "-100wh",
+      },
+      {
+        y: 0,
+        duration: 1,
+        rotate: "360deg",
+        ease: Expo.easeInOut,
+      }
+    );
+  }, []);
+};
+
+export const useGsapAboutLeftShutterOpen = (item, trig) => {
+  useEffect(() => {
+    const el = item.current;
+
+    gsap.fromTo(
+      el,
+      {
+        height: "100%",
+      },
+      {
+        height: 0,
+        duration: 2,
+        delay: 1.2,
+        ease: Expo.easeInOut,
+        scrollTrigger: {
+          trigger: trig.current,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+  }, []);
+};
+
+export const useGsapAboutRightShutterOpen = (item, trig) => {
+  useEffect(() => {
+    const el = item.current;
+
+    gsap.fromTo(
+      el,
+      {
+        widows: "100%",
+      },
+      {
+        width: 0,
+        duration: 2,
+        delay: 1,
+        ease: Expo.easeInOut,
+        scrollTrigger: {
+          trigger: trig.current,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+  }, []);
+};
